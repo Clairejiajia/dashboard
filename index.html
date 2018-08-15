@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商務控制後台
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">商務控制後台</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item  active">
+                    <a class="nav-link" href="index.html">首頁
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="list.html">列表</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- 概覽 -->
+
+    <section class="container-fluid mt-4 main">
+        <h1 class="h2 my-3">管理後台</h1>
+        <div class="row mb-4">
+            <div class="col-lg-3 col-6">
+                <div class="card rounded-0 h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-money-bill-alt fa-3x d-none d-sm-block text-secondary mr-2"></div>
+                        <div class="text-center w-100">
+                            <div class="h5">今日營收</div>
+                            <div class="h3">119,550</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card rounded-0 h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-users fa-3x d-none d-sm-block text-secondary mr-2"></div>
+                        <div class="text-center w-100">
+                            <div class="h5">會員增加</div>
+                            <div class="display-4">172</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card rounded-0 h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-money-check-alt fa-3x d-none d-sm-block text-secondary mr-2"></div>
+                        <div class="text-center w-100">
+                            <div class="h5">訂單數</div>
+                            <div class="display-4">320</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="card rounded-0 h-100">
+                    <div class="card-body d-flex align-items-center">
+                        <div class="fas fa-box fa-3x d-none d-sm-block text-secondary mr-2"></div>
+                        <div class="text-center w-100">
+                            <div class="h5">待出貨數</div>
+                            <div class="display-4">120</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 圖表 -->
+        <div class="row mb-4">
+            <section class="col-lg-8">
+                <div class="card rounded-0 h-100">
+                    <div class="card-header">用戶來源</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-8  d-flex align-items-center">
+                                <canvas id="barCanvas"></canvas>
+                            </div>
+                            <div class="col-lg-4">
+                                <h4>Detail</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate maxime nisi et quas ipsa
+                                    eius nihil accusantium nesciunt? Id ut voluptates odit, amet saepe aliquam?</p>
+                                <h6 class="mt-3">Googl來源</h6>
+                                <div class="progress">
+                                    <div class="progress-bar  bg-danger " role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mt-3">Facebook來源</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <h6 class="mt-3">未知來源</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                            </row>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="col-lg-4">
+                <div class="card rounded-0 h-100">
+                    <div class="card-header">小標題</div>
+                    <div class="card-body d-flex align-items-center">
+                        <canvas class="chart-item"></canvas>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- 表格 -->
+        <div class="card rounded-0">
+            <div class="card-header">月營運狀態</div>
+            <div class="card-body">
+                <div class="d-flex mb-3">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="month" class="sr-only">月份</label>
+                            <select name="month" id="month" class="form-control form-control-sm">
+                                <option value="1">1月</option>
+                                <option value="2">2月</option>
+                                <option value="3">3月</option>
+                                <option value="4">4月</option>
+                                <option value="5">5月</option>
+                                <option value="6">6月</option>
+                                <option value="7">7月</option>
+                                <option value="8">8月</option>
+                                <option value="9">9月</option>
+                                <option value="10">10月</option>
+                                <option value="11">11月</option>
+                                <option value="12">12月</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ml-auto">
+                        <a href="#" class="btn btn-outline-secondary btn-sm">下載報表</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm">訂單管理</a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mb-0">
+                        <thead>
+                            <tr>
+                                <th width="50">日期</th>
+                                <th>訂單數</th>
+                                <th>退費數</th>
+                                <th>出貨數</th>
+                                <th width="15%">有問題貨品</th>
+                                <th width="150">營業額</th>
+                                <th width="150">淨利潤</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>9/1</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/2</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/3</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/4</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/5</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+                            <tr>
+                                <td>9/6</td>
+                                <td>300</td>
+                                <td>1</td>
+                                <td>250</td>
+                                <td>3</td>
+                                <td class=text-right>256,000</td>
+                                <td class=text-right>168,000</td>
+                            </tr>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="6" class=text-right>月總營收</td>
+                                <td class=text-right>3,750,500</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class=text-right>月總淨利潤</td>
+                                <td class=text-right>2,140,500</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="bg-light py-3 text-center  mt-3" style="color:#868e96">
+        OO後台管理系統
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="js/all.js"></script>
+
+</html>
